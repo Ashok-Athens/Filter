@@ -1,0 +1,35 @@
+<!DCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Understanding filter </title>
+
+</head>
+<body ng-app="eMart">
+
+<div ng-controller="mainCtrl">
+
+        Billing State:
+        <select
+                ng-model="address.state"
+                ng-options="state.lookupCode as state.description for state in lov_state"></select>
+        <h1>State selected: {{address.state}}</h1>
+
+
+    <input type="text" ng-model="phoneNumber" ng-model="address.state" placeholder="Enter Phone Number"/>
+    {{phoneNumber|phoneFormatter:address.state:'xxx'}}
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.min.js"></script>
+<script src="main.js"></script>
+<script src="phoneFormatterFilter.js"></script>
+<script src="mainCtrl.js"></script>
+
+
+</body>
+</html>
+
